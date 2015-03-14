@@ -16,7 +16,7 @@ projectData = function(arr){
 
   var xScale = d3.scale.linear()
     .domain([0, arr.length])
-    .range([40, width])
+    .range([60, width])
 
   var colorScale = d3.scale.linear()
             .domain( [d3.min(arr, function(obj){ return obj.age }), d3.max(arr, function(obj){ return obj.age })] )
@@ -66,12 +66,23 @@ projectData = function(arr){
 
   svg.append("g")
     .attr('class', 'axis')
-    .attr("transform", "translate(25,0)")
+    .attr("transform", "translate(50,-5)")
+    .attr('fill', 'white')
     .call(d3.svg.axis()
       .scale(yScale)
       .orient("left")
       .ticks(10)
       .tickFormat(d3.format("s")));
+
+  svg.append("text")
+    .attr("class", "y_label")
+    .attr("text-anchor", "end")
+    .attr("y", 15)
+    .attr("x", -(height/2))
+    .attr("transform", "rotate(-90)")
+    .text("Age")
+    .attr('fill', 'white')
+    .style('font-size', 23)
   
 
 }
