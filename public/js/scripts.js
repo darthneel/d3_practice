@@ -7,7 +7,7 @@ randomColor = function(){
 
 projectData = function(arr){
 
-  var height = 700;
+  var height = 650;
   var width = 900;
 
   var yScale = d3.scale.linear()
